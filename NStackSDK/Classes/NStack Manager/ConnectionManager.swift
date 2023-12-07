@@ -35,8 +35,8 @@ protocol WrapperModelType: Codable {
 // FIXME: Figure out how to do accept language header properly
 final class ConnectionManager: Repository {
 
-    private let baseURLv1 = "https://nstack.io/api/v1/"
-    private let baseURLv2 = "https://nstack.io/api/v2/"
+    private let baseURLv1: String
+    private let baseURLv2: String
     private let session: URLSession
     private let configuration: APIConfiguration
 
