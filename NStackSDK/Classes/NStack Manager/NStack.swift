@@ -131,7 +131,9 @@ public class NStack {
             isFlat: configuration.flat,
             isProduction: configuration.isProduction,
             localizationUrlOverride: configuration.localizationUrlOverride,
-            nmeta: NMeta(environment: configuration.currentEnvironmentAPIString)
+            nmeta: NMeta(environment: configuration.currentEnvironmentAPIString),
+            baseUrl: configuration.baseUrl,
+            subKey: configuration.subKey
         )
         repository = ConnectionManager(configuration: apiConfiguration)
 

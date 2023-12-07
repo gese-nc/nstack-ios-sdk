@@ -46,7 +46,8 @@ final class ConnectionManager: Repository {
         return [
             "X-Application-id": configuration.appId,
             "X-Rest-Api-Key": configuration.restAPIKey,
-            "SDK-Version": "ios-\(sdkVersion)"
+            "SDK-Version": "ios-\(sdkVersion)",
+            "Ocp-Apim-Subscription-Key": configuration.subKey
         ]
     }
 
@@ -56,6 +57,8 @@ final class ConnectionManager: Repository {
 
         self.session = URLSession(configuration: sessionConfiguration)
         self.configuration = configuration
+        self.baseURLv1 = "\(configuration.baseUrl)api/v1/"
+        self.baseURLv2 = "\(configuration.baseUrl)api/v2/"
     }
 }
 

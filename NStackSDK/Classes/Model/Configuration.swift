@@ -50,6 +50,8 @@ public struct Configuration {
     public var mockSucceed = true
     public var localizationUrlOverride: String?
     public var currentEnvironment: NStackEnvironment
+    public let baseUrl: String
+    public let subKey: String
 
     // Used for tests
     internal var versionOverride: String?
@@ -71,22 +73,29 @@ public struct Configuration {
                 localizationClass: LocalizableModel.Type,
                 flatLocalization: Bool = false,
                 localizationsUrlOverride: String? = nil,
-                environment: NStackEnvironment) {
+                environment: NStackEnvironment,
+                baseUrl: String,
+                subKey: String
+            ) {
         self.appId = appId
         self.restAPIKey = restAPIKey
         self.localizationClass = localizationClass
         self.flat = flatLocalization
         self.localizationUrlOverride = localizationsUrlOverride
         self.currentEnvironment = environment
+        self.baseUrl = baseUrl
+        self.subKey = subKey
     }
 
-    public init(plistName: String, environment: NStackEnvironment, localizationClass: LocalizableModel.Type) {
+    public init(plistName: String, environment: NStackEnvironment, localizationClass: LocalizableModel.Type, baseUrl: String, subKey: String) {
         var appId: String?
         var restAPIKey: String?
         var flatString: String?
         var localizationsUrlOverride: String?
 
         self.currentEnvironment = environment
+        self.baseUrl = baseUrl
+        self.subKey = subKey
 
         for bundle in Bundle.allBundles {
             let fileName = plistName.replacingOccurrences(of: ".plist", with: "")
