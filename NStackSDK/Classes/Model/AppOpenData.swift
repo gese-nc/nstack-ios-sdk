@@ -28,9 +28,9 @@ public struct AppOpenData: Codable {
     public let rateReminder: RateReminder?
 
     public let localize: [LocalizationConfig]?
-    public let platform: String
+    public let platform: String?
 
-    public let createdAt: String
+    public let createdAt: String?
     public let lastUpdated: String?
 
     public enum CodingKeys: String, CodingKey {
