@@ -47,7 +47,8 @@ final class ConnectionManager: Repository {
             "X-Application-id": configuration.appId,
             "X-Rest-Api-Key": configuration.restAPIKey,
             "SDK-Version": "ios-\(sdkVersion)",
-            "Ocp-Apim-Subscription-Key": configuration.subKey
+            "Ocp-Apim-Subscription-Key": configuration.subKey,
+            "Content-Type": "application/x-www-form-urlencoded"
         ]
     }
 
