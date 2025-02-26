@@ -27,9 +27,7 @@ extension UIApplication {
     func safeOpenURL(_ url: URL) {
         guard self.canOpenURL(url) else { return }
 
-        guard self.perform(NSSelectorFromString("openURL:"), with: url) != nil else {
-            return
-        }
+        self.open(url, options: [:], completionHandler: nil)
     }
     
     public var currentWindow: UIWindow? {
