@@ -3,11 +3,11 @@
     "pins": [
       {
         "package": "LocalizationManager",
-        "repositoryURL": "https://github.com/nstack-io/localization-manager.git",
+        "repositoryURL": "https://github.com/gese-nc/localization-manager.git",
         "state": {
           "branch": null,
-          "revision": "917de7fbe7ebe58862add784a67916bc98a79356",
-          "version": "3.1.5"
+          "revision": "d9218eef49870695d4e03bddb587022f8558ba51",
+          "version": "3.1.6"
         }
       }
     ]

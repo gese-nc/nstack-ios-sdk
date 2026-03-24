@@ -15,18 +15,24 @@ struct APIConfiguration {
     let isProduction: Bool
     let localizationUrlOverride: String?
     let nmeta: NMeta
+    let baseUrl: String
+    let subKey: String
 
     init(appId: String = "",
          restAPIKey: String = "",
          isFlat: Bool = false,
          isProduction: Bool = true,
          localizationUrlOverride: String? = nil,
-         nmeta: NMeta) {
+         nmeta: NMeta,
+         baseUrl: String,
+         subKey: String = "") {
         self.appId = appId
         self.restAPIKey = restAPIKey
         self.isFlat = isFlat
         self.isProduction = isProduction
         self.localizationUrlOverride = localizationUrlOverride
         self.nmeta = nmeta
+        self.baseUrl = baseUrl
+        self.subKey = subKey
     }
 }

@@ -35,8 +35,8 @@ protocol WrapperModelType: Codable {
 // FIXME: Figure out how to do accept language header properly
 final class ConnectionManager: Repository {
 
-    private let baseURLv1 = "https://nstack.io/api/v1/"
-    private let baseURLv2 = "https://nstack.io/api/v2/"
+    private let baseURLv1: String
+    private let baseURLv2: String
     private let session: URLSession
     private let configuration: APIConfiguration
 
@@ -46,7 +46,9 @@ final class ConnectionManager: Repository {
         return [
             "X-Application-id": configuration.appId,
             "X-Rest-Api-Key": configuration.restAPIKey,
-            "SDK-Version": "ios-\(sdkVersion)"
+            "SDK-Version": "ios-\(sdkVersion)",
+            "Ocp-Apim-Subscription-Key": configuration.subKey,
+            "Content-Type": "application/x-www-form-urlencoded"
         ]
     }
 
@@ -56,6 +58,8 @@ final class ConnectionManager: Repository {
 
         self.session = URLSession(configuration: sessionConfiguration)
         self.configuration = configuration
+        self.baseURLv1 = "\(configuration.baseUrl)api/v1/"
+        self.baseURLv2 = "\(configuration.baseUrl)api/v2/"
     }
 }
 
