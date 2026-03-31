@@ -5,9 +5,9 @@
         "package": "LocalizationManager",
         "repositoryURL": "https://github.com/gese-nc/localization-manager.git",
         "state": {
-          "branch": "develop",
+          "branch": null,
           "revision": "4037c0a76ca6086b9d4260b29de1f8380747db67",
-          "version": null
+          "version": "3.2.0"
         }
       }
     ]

@@ -18,7 +18,7 @@ let package = Package(
             targets: ["NStackSDK"]),
     ],
     dependencies: [
-       .package(name: "LocalizationManager", url: "https://github.com/gese-nc/localization-manager.git", .branch("develop"))
+        .package(name: "LocalizationManager", url: "https://github.com/gese-nc/localization-manager.git", from: "3.2.0"),
     ],
     
     targets: [
